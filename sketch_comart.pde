@@ -28,7 +28,10 @@ void draw() {
 
     float h = map(i, 0, fft.specSize(), 0, 180);
     stroke(h, 100, 100);
-    line(x, height, x, y);
+   // line(x, height, x, y);
+    float ellipseSize = map(fft.getBand(i), 0, buffersize/16, 0, width);
+    fill(h, 100, 100, 7);
+    ellipse(x,height/2,ellipseSize,ellipseSize);
   }
 }
 
